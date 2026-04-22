@@ -145,36 +145,58 @@ const DashboardPage = () => {
       {/* Audit Report */}
       {deadline && reportData && (
         <div className="report-wrapper animate-slide-up">
-          <div ref={reportRef} className="report-paper">
-            <div className="report-header">
+          <div ref={reportRef} style={{
+            width: '210mm', padding: '30mm', background: '#fff',
+            fontFamily: "'Inter', sans-serif", color: '#1E293B', boxSizing: 'border-box'
+          }}>
+            <div style={{
+              display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+              borderBottom: '4px solid #3A0CA3', paddingBottom: '20px'
+            }}>
               <div>
-                <h1 className="report-title">AUDIT REPORT</h1>
-                <p className="report-ref">Reference: {reportData.invoiceNumber}</p>
+                <h1 style={{ margin: 0, fontSize: '36px', fontWeight: 800, color: '#3A0CA3', letterSpacing: '-1px' }}>AUDIT REPORT</h1>
+                <p style={{ margin: '4px 0 0', fontSize: '14px', color: '#94A3B8' }}>Reference: {reportData.invoiceNumber}</p>
               </div>
               <div style={{ textAlign: 'right' }}>
-                <h2 className="report-brand">EXPORTGUARD</h2>
-                <p style={{ fontSize: '12px', color: 'var(--text-muted)' }}>{new Date().toLocaleDateString()}</p>
+                <h2 style={{ margin: 0, fontSize: '24px', fontWeight: 800, color: '#00D2FF' }}>EXPORTGUARD</h2>
+                <p style={{ margin: '2px 0 0', fontSize: '12px', color: '#94A3B8' }}>{new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' })}</p>
               </div>
             </div>
-
             <div style={{ marginTop: '40px' }}>
-              <p style={{ fontSize: '16px', marginBottom: '8px' }}><strong>Buyer:</strong> {reportData.buyerName}</p>
-              <p style={{ fontSize: '16px', marginBottom: '8px' }}><strong>Shipment Date:</strong> {new Date(reportData.date).toLocaleDateString()}</p>
-              <p style={{ fontSize: '16px' }}><strong>Payment Mode:</strong> {reportData.currency === 'INR' ? 'Domestic (INR)' : 'International (FC)'}</p>
-
-              <div className="report-deadline-box">
-                <h4 className="report-deadline-label">FEMA Realization Deadline</h4>
-                <h1 className="report-deadline-date">{deadline}</h1>
-                <p className="report-warning">⚠ ACTION REQUIRED PRIOR TO THIS DATE</p>
+              <p style={{ fontSize: '16px', marginBottom: '10px' }}><strong>Buyer:</strong> {reportData.buyerName}</p>
+              <p style={{ fontSize: '16px', marginBottom: '10px' }}><strong>Shipment Date:</strong> {new Date(reportData.date).toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' })}</p>
+              <p style={{ fontSize: '16px' }}><strong>Payment Mode:</strong> {reportData.currency === 'INR' ? 'Indian Rupee (Domestic)' : 'Foreign Currency (International)'}</p>
+              <div style={{ marginTop: '40px', padding: '40px', background: '#F1F5F9', borderRadius: '16px', borderLeft: '8px solid #3A0CA3' }}>
+                <h4 style={{ margin: 0, fontSize: '13px', color: '#94A3B8', textTransform: 'uppercase', letterSpacing: '2px' }}>FEMA Realization Deadline</h4>
+                <h1 style={{ margin: '12px 0', fontSize: '52px', fontWeight: 800, color: '#1E293B', letterSpacing: '-2px' }}>{deadline}</h1>
+                <p style={{ margin: 0, fontSize: '14px', color: '#DC2626', fontWeight: 700 }}>⚠ ACTION REQUIRED PRIOR TO THIS DATE</p>
               </div>
-
-              <div style={{ marginTop: '40px', fontSize: '13px', color: 'var(--text-muted)', lineHeight: '1.7' }}>
-                <p><strong>Note:</strong> Generated per 2026 RBI Master Direction on Export of Goods and Services. Failure to repatriate proceeds within {reportData.currency === 'INR' ? '18' : '15'} months leads to automatic EDPMS caution-listing and withdrawal of export benefits.</p>
+              <div style={{ marginTop: '30px', display: 'flex', gap: '20px' }}>
+                <div style={{ flex: 1, padding: '20px', background: '#F8FAFC', borderRadius: '12px', border: '1px solid #E2E8F0' }}>
+                  <p style={{ margin: 0, fontSize: '12px', color: '#94A3B8', textTransform: 'uppercase' }}>Realization Period</p>
+                  <p style={{ margin: '6px 0 0', fontSize: '20px', fontWeight: 700, color: '#3A0CA3' }}>{reportData.currency === 'INR' ? '18 Months' : '15 Months'}</p>
+                </div>
+                <div style={{ flex: 1, padding: '20px', background: '#F8FAFC', borderRadius: '12px', border: '1px solid #E2E8F0' }}>
+                  <p style={{ margin: 0, fontSize: '12px', color: '#94A3B8', textTransform: 'uppercase' }}>Currency</p>
+                  <p style={{ margin: '6px 0 0', fontSize: '20px', fontWeight: 700, color: '#3A0CA3' }}>{reportData.currency}</p>
+                </div>
+                <div style={{ flex: 1, padding: '20px', background: '#F8FAFC', borderRadius: '12px', border: '1px solid #E2E8F0' }}>
+                  <p style={{ margin: 0, fontSize: '12px', color: '#94A3B8', textTransform: 'uppercase' }}>Status</p>
+                  <p style={{ margin: '6px 0 0', fontSize: '20px', fontWeight: 700, color: '#16A34A' }}>Active</p>
+                </div>
+              </div>
+              <div style={{ marginTop: '40px', padding: '20px', background: '#FFFBEB', borderRadius: '12px', border: '1px solid #FDE68A' }}>
+                <p style={{ margin: 0, fontSize: '13px', color: '#92400E', lineHeight: 1.7 }}>
+                  <strong>⚠ Important:</strong> Generated per 2026 RBI Master Direction on Export of Goods and Services. Failure to repatriate export proceeds within {reportData.currency === 'INR' ? '18' : '15'} months leads to automatic EDPMS caution-listing and withdrawal of export benefits.
+                </p>
+              </div>
+              <div style={{ marginTop: '40px', textAlign: 'center', paddingTop: '20px', borderTop: '2px solid #E2E8F0' }}>
+                <p style={{ margin: 0, fontSize: '11px', color: '#94A3B8' }}>Generated by ExportGuard · FEMA 2026 Compliance Platform · exportguard.vercel.app</p>
               </div>
             </div>
           </div>
 
-          <button onClick={downloadPDF} className="btn btn-primary btn-lg" style={{ marginTop: '24px', borderRadius: 'var(--radius-full)' }}>
+          <button onClick={downloadPDF} className="btn btn-primary btn-lg" style={{ marginTop: '24px', borderRadius: '9999px' }}>
             📄 Download PDF Report
           </button>
         </div>
