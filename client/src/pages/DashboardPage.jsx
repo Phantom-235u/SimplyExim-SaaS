@@ -97,7 +97,7 @@ const DashboardPage = () => {
           <h3 className="card-title">New Shipment Audit</h3>
           <span className="badge badge-active">FEMA 2026</span>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr', gap: '16px', alignItems: 'flex-end' }}>
+        <div className="form-grid-4">
           <div className="form-group">
             <label className="form-label">Buyer Name</label>
             <input
