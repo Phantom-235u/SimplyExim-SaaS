@@ -14,7 +14,7 @@ const Navbar = ({ user, onLogout }) => {
     <nav className="navbar">
       <NavLink to="/dashboard" className="navbar-brand">
         <Logo size={34} />
-        <h2>SIMPLY<span>EXIM</span></h2>
+        <h2>EXPORT<span>GUARD</span></h2>
       </NavLink>
 
       <div className="navbar-links">

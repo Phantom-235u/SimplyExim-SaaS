@@ -4,8 +4,8 @@ const Footer = () => (
   <footer className="footer">
     <div className="footer-grid">
       <div className="footer-brand">
-        <h2>SIMPLY<span>EXIM</span></h2>
-        <p>Empowering Indian exporters with real-time compliance automation and FEMA 2026 monitoring.</p>
+        <h2>EXPORT<span>GUARD</span></h2>
+        <p>Protecting Indian exporters with real-time compliance automation and FEMA 2026 monitoring.</p>
       </div>
       <div>
         <h4>Platform</h4>
@@ -31,7 +31,7 @@ const Footer = () => (
       </div>
     </div>
     <div className="footer-bottom">
-      <p>© 2026 SimplyExim. Built for the Export-Import community of India.</p>
+      <p>© 2026 ExportGuard. Built for the Export-Import community of India.</p>
     </div>
   </footer>
 );

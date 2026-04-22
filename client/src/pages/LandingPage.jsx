@@ -16,7 +16,7 @@ const LandingPage = () => {
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
           <Logo size={34} />
           <span style={{ fontSize: '20px', fontWeight: 800, letterSpacing: '-1px', color: '#3A0CA3' }}>
-            SIMPLY<span style={{ color: '#00D2FF' }}>EXIM</span>
+            EXPORT<span style={{ color: '#00D2FF' }}>GUARD</span>
           </span>
         </div>
         <div style={{ display: 'flex', gap: '8px' }}>
@@ -295,8 +295,8 @@ const LandingPage = () => {
             Frequently Asked Questions
           </h2>
           {[
-            { q: 'What happens if I miss the FEMA realization deadline?', a: 'RBI will auto caution-list your firm on EDPMS. You lose export benefits, can face penalties, and your AD bank will start asking difficult questions. SimplyExim prevents this.' },
-            { q: 'Is the deadline 15 months or 18 months?', a: '15 months for shipments settled in foreign currency (USD, EUR, GBP, etc). 18 months for shipments settled in Indian Rupees (INR). SimplyExim auto-calculates based on your currency selection.' },
+            { q: 'What happens if I miss the FEMA realization deadline?', a: 'RBI will auto caution-list your firm on EDPMS. You lose export benefits, can face penalties, and your AD bank will start asking difficult questions. ExportGuard prevents this.' },
+            { q: 'Is the deadline 15 months or 18 months?', a: '15 months for shipments settled in foreign currency (USD, EUR, GBP, etc). 18 months for shipments settled in Indian Rupees (INR). ExportGuard auto-calculates based on your currency selection.' },
             { q: 'Can my Chartered Accountant use this?', a: 'Yes! On the Enterprise plan, your CA gets a separate login to view all your compliance data, download reports, and help with tax filing.' },
             { q: 'Is my data secure?', a: 'Absolutely. We use bank-grade encryption, your data is stored on MongoDB Atlas with enterprise security, and we never share your information with third parties.' },
           ].map((faq, i) => (
@@ -341,7 +341,7 @@ const LandingPage = () => {
         <div style={{ display: 'flex', justifyContent: 'space-between', maxWidth: '1000px', margin: '0 auto', flexWrap: 'wrap', gap: '32px' }}>
           <div>
             <span style={{ fontSize: '18px', fontWeight: 800, color: '#fff', letterSpacing: '-1px' }}>
-              SIMPLY<span style={{ color: '#00D2FF' }}>EXIM</span>
+              EXPORT<span style={{ color: '#00D2FF' }}>GUARD</span>
             </span>
             <p style={{ fontSize: '13px', marginTop: '8px', maxWidth: '250px', lineHeight: 1.6 }}>
               Automated FEMA 2026 compliance for the export-import community of India.
@@ -363,7 +363,7 @@ const LandingPage = () => {
           </div>
         </div>
         <div style={{ textAlign: 'center', marginTop: '32px', paddingTop: '16px', borderTop: '1px solid #1E293B', fontSize: '12px' }}>
-          © 2026 SimplyExim. Built for Indian Exporters.
+          © 2026 ExportGuard. Built for Indian Exporters.
         </div>
       </footer>
     </div>

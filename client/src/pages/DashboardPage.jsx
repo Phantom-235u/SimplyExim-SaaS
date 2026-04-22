@@ -67,7 +67,7 @@ const DashboardPage = () => {
     const pdfWidth = pdf.internal.pageSize.getWidth();
     const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
     pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
-    pdf.save(`SimplyExim_Audit_${date}.pdf`);
+    pdf.save(`ExportGuard_Audit_${date}.pdf`);
   };
 
   const activeAudits = history.filter(h => h.status === 'Active').length;
@@ -152,7 +152,7 @@ const DashboardPage = () => {
                 <p className="report-ref">Reference: {reportData.invoiceNumber}</p>
               </div>
               <div style={{ textAlign: 'right' }}>
-                <h2 className="report-brand">SIMPLYEXIM</h2>
+                <h2 className="report-brand">EXPORTGUARD</h2>
                 <p style={{ fontSize: '12px', color: 'var(--text-muted)' }}>{new Date().toLocaleDateString()}</p>
               </div>
             </div>

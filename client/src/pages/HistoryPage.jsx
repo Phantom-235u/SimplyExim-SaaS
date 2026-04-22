@@ -83,7 +83,7 @@ const HistoryPage = () => {
           <p style="margin: 0; color: #94A3B8;">Reference: ${audit.invoiceNumber}</p>
         </div>
         <div style="text-align: right;">
-          <h2 style="margin: 0; color: #00D2FF;">SIMPLYEXIM</h2>
+          <h2 style="margin: 0; color: #00D2FF;">EXPORTGUARD</h2>
           <p style="margin: 0; font-size: 12px;">${new Date(audit.created).toLocaleDateString()}</p>
         </div>
       </div>
@@ -111,7 +111,7 @@ const HistoryPage = () => {
     const pdfWidth = pdf.internal.pageSize.getWidth();
     const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
     pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
-    pdf.save(`SimplyExim_${audit.invoiceNumber}.pdf`);
+    pdf.save(`ExportGuard_${audit.invoiceNumber}.pdf`);
   };
 
   const exportToExcel = () => {
@@ -137,7 +137,7 @@ const HistoryPage = () => {
     }));
     ws['!cols'] = colWidths;
 
-    XLSX.writeFile(wb, `SimplyExim_History_${new Date().toISOString().slice(0, 10)}.xlsx`);
+    XLSX.writeFile(wb, `ExportGuard_History_${new Date().toISOString().slice(0, 10)}.xlsx`);
   };
 
   const getDaysLeft = (deadlineStr) => {

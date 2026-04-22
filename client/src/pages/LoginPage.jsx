@@ -33,7 +33,7 @@ const LoginPage = ({ onLogin }) => {
       <div className="auth-card animate-slide-up">
         <div className="auth-logo">
           <Logo size={42} />
-          <h2>SIMPLY<span>EXIM</span></h2>
+          <h2>EXPORT<span>GUARD</span></h2>
         </div>
 
         <h3 className="auth-title">Welcome back</h3>
